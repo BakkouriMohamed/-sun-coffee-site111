@@ -66,14 +66,18 @@ header.nav{
 }
 .hero h1 span{ position:relative; display:inline-block; }
 .hero p{ font-size:18px; line-height:1.65; color:var(--coffee-soft); max-width:52ch; margin:0 auto 30px; }
+.hero-actions{
+  display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap;
+}
 .btn{
   display:inline-block; background:var(--coffee); color:var(--cream); font-weight:700; font-size:20px;
   text-decoration:none; padding:20px 44px; border-radius:999px; letter-spacing:.05em;
   transition:transform .2s ease, background .2s ease;
   min-width:240px;
+  text-align:center;
 }
 .btn:hover{ transform:translateY(-2px); background:var(--rust); }
-.btn.outline{ background:transparent; border:2px solid var(--coffee); color:var(--coffee); margin-left:20px; min-width:240px; }
+.btn.outline{ background:transparent; border:2px solid var(--coffee); color:var(--coffee); min-width:240px; }
 .btn.outline:hover{ background:var(--coffee); color:var(--cream); }
 
 .steam-cup{ position:absolute; right:6vw; bottom:5%; width:140px; opacity:.9; z-index:1; }@media (max-width:900px){ .steam-cup{ display:none; } }
@@ -197,8 +201,10 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
     <div class="eyebrow">Café de quartier — depuis 2016</div>
     <h1>Chaque tasse<br><span>a son soleil</span></h1>
     <p>CHAMSS COFFEE, c'est un café de quartier à Fès où le grain est torréfié avec soin et où les habitués ont leur table. Cafés glacés, pâtisseries maison, une terrasse qui attrape le soleil toute la journée.</p>
-    <a href="#menu" class="btn">Voir le menu</a>
-    <a href="#contact" class="btn outline">Nous trouver</a>
+    <div class="hero-actions">
+      <a href="#menu" class="btn">Voir le menu</a>
+      <a href="#contact" class="btn outline">Nous trouver</a>
+    </div>
   </div>
   <svg class="steam-cup" viewBox="0 0 120 120">
     <g class="steam">
