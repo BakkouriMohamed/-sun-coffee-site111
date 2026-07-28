@@ -58,14 +58,14 @@ header.nav{
   animation:spin 60s linear infinite;
 }
 @keyframes spin{ to{ transform:rotate(360deg); } }
-.hero-content{ position:relative; z-index:1; padding:0 6vw; max-width:720px; text-align:center; margin:0 auto; display:flex; flex-direction:column; align-items:center; }
+.hero-content{ position:relative; z-index:1; padding:0 6vw; max-width:720px; margin:0 auto; display:flex; flex-direction:column; align-items:flex-end; text-align:right; }
 .eyebrow{ font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px; color:var(--rust); margin-bottom:16px; }
 .hero h1{
   font-family:var(--disp); font-weight:900; font-optical-sizing:auto;
   font-size:clamp(46px, 8vw, 92px); line-height:.95; letter-spacing:-.02em; margin-bottom:20px;
 }
 .hero h1 span{ position:relative; display:inline-block; }
-.hero p{ font-size:18px; line-height:1.65; color:var(--coffee-soft); max-width:52ch; margin:0 auto 30px; }
+.hero p{ font-size:18px; line-height:1.65; color:var(--coffee-soft); max-width:52ch; margin:0 0 30px auto; }
 .btn{
   display:inline-block; background:var(--coffee); color:var(--cream); font-weight:700; font-size:20px;
   text-decoration:none; padding:20px 44px; border-radius:999px; letter-spacing:.05em;
@@ -195,7 +195,7 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
   </svg>
   <div class="hero-content">
     <div class="eyebrow">Café de quartier — depuis 2016</div>
-    <h1>Chaque tasse<br><span>a son soleil</span>.</h1>
+    <h1>Chaque tasse<br><span>a soleil</span></h1>
     <p>CHAMSS COFFEE, c'est un café de quartier à Fès où le grain est torréfié avec soin et où les habitués ont leur table. Cafés glacés, pâtisseries maison, une terrasse qui attrape le soleil toute la journée.</p>
     <a href="#menu" class="btn">Voir le menu</a>
     <a href="#contact" class="btn outline">Nous trouver</a>
