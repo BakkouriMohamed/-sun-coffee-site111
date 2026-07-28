@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHAMSS COFFEE — Café de quartier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF3E2;
+  --cream-2:#F3E6C9;
+  --coffee:#3B2417;
+  --coffee-soft:#6B4A34;
+  --sun:#F2A93B;
+  --rust:#C1592B;
+  --line: rgba(59,36,23,.15);
+  --disp: 'Fraunces', serif;
+  --body: 'Libre Franklin', sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream); color:var(--coffee); font-family:var(--body);
+  overflow-x:hidden;
+}
+img,svg{display:block; max-width:100%;}
+a{color:inherit;}
+.wrap{ max-width:1180px; margin:0 auto; padding:0 6vw; }
+
+/* ============ NAV ============ */
+header.nav{
+  position:sticky; top:0; z-index:100; background:rgba(251,243,226,.9); backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1180px; margin:0 auto; padding:16px 6vw; display:flex; align-items:center; justify-content:space-between;
+}
+.logo{ font-family:var(--disp); font-weight:900; font-size:22px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
+.logo .dot{ width:10px; height:10px; border-radius:50%; background:var(--sun); }
+.nav-links{ display:flex; gap:28px; font-size:14px; font-weight:600; }
+.nav-links a{ text-decoration:none; position:relative; padding-bottom:3px; }
+.nav-links a::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--rust);
+  transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+}
+.nav-links a:hover::after{ transform:scaleX(1); }
+@media (max-width:700px){ .nav-links{ gap:16px; font-size:12.5px; } }
+
+/* ============ HERO ============ */
+.hero{
+  position:relative; min-height:92vh; display:flex; align-items:center; overflow:hidden;
+  background:radial-gradient(circle at 82% 18%, var(--sun) 0%, var(--cream) 46%);
+}
+.rays{
+  position:absolute; top:-30%; right:-14%; width:640px; height:640px; z-index:0; opacity:.5;
+  animation:spin 60s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+.hero-content{ position:relative; z-index:1; padding:0 6vw; max-width:720px; }
+.eyebrow{ font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px; color:var(--rust); margin-bottom:16px; }
+.hero h1{
+  font-family:var(--disp); font-weight:900; font-optical-sizing:auto;
+  font-size:clamp(46px, 8vw, 92px); line-height:.95; letter-spacing:-.02em; margin-bottom:20px;
+}
+.hero h1 span{ position:relative; display:inline-block; }
+.hero h1 span::after{
+  content:''; position:absolute; left:-4px; right:-4px; bottom:.06em; height:.28em; background:var(--sun);
+  z-index:-1; transform:scaleX(0); transform-origin:left; animation:swipe 1s .5s cubic-bezier(.2,.8,.2,1) forwards;
+}
+@keyframes swipe{ to{ transform:scaleX(1); } }
+.hero p{ font-size:18px; line-height:1.65; color:var(--coffee-soft); max-width:52ch; margin-bottom:30px; }
+.btn{
+  display:inline-block; background:var(--coffee); color:var(--cream); font-weight:700; font-size:14px;
+  text-decoration:none; padding:14px 26px; border-radius:999px; letter-spacing:.03em;
+  transition:transform .2s ease, background .2s ease;
+}
+.btn:hover{ transform:translateY(-2px); background:var(--rust); }
+.btn.outline{ background:transparent; border:2px solid var(--coffee); color:var(--coffee); margin-left:12px; }
+.btn.outline:hover{ background:var(--coffee); color:var(--cream); }
+
+.steam-cup{ position:absolute; right:8%; bottom:6%; width:120px; opacity:.9; z-index:1; }
+@media (max-width:900px){ .steam-cup{ display:none; } }
+.steam path{ stroke:var(--coffee-soft); stroke-width:3; fill:none; stroke-linecap:round; opacity:.55; }
+.steam .s1{ animation:rise 3.2s ease-in-out infinite; }
+.steam .s2{ animation:rise 3.2s .6s ease-in-out infinite; }
+.steam .s3{ animation:rise 3.2s 1.2s ease-in-out infinite; }
+@keyframes rise{
+  0%{ transform:translateY(6px); opacity:0; }
+  30%{ opacity:.6; }
+  100%{ transform:translateY(-22px); opacity:0; }
+}
+
+/* ============ SECTION HEAD ============ */
+.section{ padding:100px 0; border-top:1px solid var(--line); }
+.section-head{ max-width:640px; margin:0 auto 50px; text-align:center; }
+.section-head .tag{ font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12.5px; color:var(--rust); }
+.section-head h2{ font-family:var(--disp); font-weight:900; font-size:clamp(32px,5vw,54px); margin-top:10px; letter-spacing:-.01em; }
+
+/* ============ STORY ============ */
+.story-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8vw; align-items:center; }
+@media (max-width:860px){ .story-grid{ grid-template-columns:1fr; gap:40px; } }
+.story-copy p{ font-size:16.5px; line-height:1.75; color:var(--coffee-soft); margin-bottom:16px; }
+.story-copy p:first-child::first-letter{
+  font-family:var(--disp); font-weight:900; font-size:52px; float:left; line-height:.8; margin:4px 8px 0 0; color:var(--rust);
+}
+.story-visual{
+  aspect-ratio:1/1; border-radius:18px; background:linear-gradient(160deg, var(--cream-2), var(--sun));
+  display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+}
+.story-visual .badge{
+  width:64%; aspect-ratio:1; border-radius:50%; border:2px dashed var(--coffee);
+  display:flex; align-items:center; justify-content:center; text-align:center; padding:20px;
+  font-family:var(--disp); font-weight:700; font-size:15px; letter-spacing:.02em;
+  transform:rotate(-8deg); background:var(--cream);
+}
+
+.timeline{ display:flex; justify-content:space-between; margin-top:56px; gap:20px; flex-wrap:wrap; }
+.tl-item{ flex:1; min-width:140px; text-align:center; position:relative; }
+.tl-item .yr{ font-family:var(--disp); font-weight:900; font-size:26px; color:var(--rust); }
+.tl-item .lbl{ font-size:13.5px; color:var(--coffee-soft); margin-top:6px; }
+.tl-item::before{
+  content:''; display:block; width:10px; height:10px; border-radius:50%; background:var(--sun);
+  margin:0 auto 14px;
+}
+
+/* ============ MENU ============ */
+.menu-tabs{ display:flex; justify-content:center; gap:10px; margin-bottom:44px; flex-wrap:wrap; }
+.menu-tab{
+  font-family:var(--body); font-weight:700; font-size:13.5px; letter-spacing:.04em; text-transform:uppercase;
+  padding:10px 20px; border-radius:999px; border:2px solid var(--coffee); background:transparent; color:var(--coffee);
+  cursor:pointer; transition:background .2s ease, color .2s ease;
+}
+.menu-tab.active, .menu-tab:hover{ background:var(--coffee); color:var(--cream); }
+.menu-panel{ display:none; }
+.menu-panel.active{ display:block; animation:fadeUp .5s ease; }
+@keyframes fadeUp{ from{ opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+.menu-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:0 40px; }
+@media (max-width:700px){ .menu-grid{ grid-template-columns:1fr; } }
+.menu-item{
+  display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:16px 0;
+  border-bottom:1px dashed var(--line);
+}
+.menu-item .mi-left{ flex:1; }
+.menu-item .mi-name{ font-family:var(--disp); font-weight:700; font-size:17.5px; }
+.menu-item .mi-desc{ font-size:13px; color:var(--coffee-soft); margin-top:3px; }
+.menu-item .mi-price{ font-family:var(--disp); font-weight:900; font-size:17px; color:var(--rust); white-space:nowrap; }
+
+/* ============ CONTACT ============ */
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8vw; }
+@media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
+.info-block{ margin-bottom:26px; }
+.info-block .lbl{ font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:12px; color:var(--rust); margin-bottom:6px; }
+.info-block .val{ font-size:16px; line-height:1.6; }
+.socials{ display:flex; gap:16px; margin-top:14px; }
+.socials a{
+  width:42px; height:42px; border-radius:50%; border:2px solid var(--coffee); display:flex; align-items:center; justify-content:center;
+  text-decoration:none; font-size:13px; font-weight:700; transition:background .2s ease, color .2s ease;
+}
+.socials a:hover{ background:var(--coffee); color:var(--cream); }
+.map-visual{
+  border-radius:18px; background:var(--cream-2); min-height:320px; display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--line); text-align:center; padding:30px;
+}
+.map-visual .pin{ font-family:var(--disp); font-weight:900; font-size:20px; margin-bottom:8px; }
+
+footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-soft); border-top:1px solid var(--line); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="dot"></span>CHAMSS COFFEE</div>
+    <nav class="nav-links">
+      <a href="#histoire">Notre histoire</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="rays" viewBox="0 0 200 200">
+    <g stroke="#3B2417" stroke-width="2" opacity="0.25">
+      <line x1="100" y1="0" x2="100" y2="40"/>
+      <line x1="100" y1="200" x2="100" y2="160"/>
+      <line x1="0" y1="100" x2="40" y2="100"/>
+      <line x1="200" y1="100" x2="160" y2="100"/>
+      <line x1="30" y1="30" x2="55" y2="55"/>
+      <line x1="170" y1="170" x2="145" y2="145"/>
+      <line x1="170" y1="30" x2="145" y2="55"/>
+      <line x1="30" y1="170" x2="55" y2="145"/>
+    </g>
+  </svg>
+  <div class="hero-content">
+    <div class="eyebrow">Café de quartier — depuis 2016</div>
+    <h1>Chaque tasse<br><span>a son soleil</span>.</h1>
+    <p>CHAMSS COFFEE, c'est un café de quartier à Fès où le grain est torréfié avec soin et où les habitués ont leur table. Cafés glacés, pâtisseries maison, une terrasse qui attrape le soleil toute la journée.</p>
+    <a href="#menu" class="btn">Voir le menu</a>
+    <a href="#contact" class="btn outline">Nous trouver</a>
+  </div>
+  <svg class="steam-cup" viewBox="0 0 120 120">
+    <g class="steam">
+      <path class="s1" d="M45 55 Q40 45 45 35 Q50 25 45 15"/>
+      <path class="s2" d="M60 55 Q55 45 60 35 Q65 25 60 15"/>
+      <path class="s3" d="M75 55 Q70 45 75 35 Q80 25 75 15"/>
+    </g>
+    <path d="M30 60 h60 a30 30 0 0 1 -60 0" fill="#3B2417" opacity="0.85"/>
+    <path d="M90 65 a25 25 0 0 1 0 30" fill="none" stroke="#3B2417" stroke-width="5" opacity="0.85"/>
+  </svg>
+</section>
+
+<!-- ============ HISTOIRE ============ -->
+<section class="section" id="histoire">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Notre histoire</div>
+      <h2>Une histoire de quartier</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-copy">
+        <p>Tout a commencé en 2016 dans une petite rue de Fès, quand Sanae a décidé d'ouvrir un café qui ressemble à ce qu'elle aimait boire chez elle : un café franc, bien torréfié, servi avec le sourire. Le nom "CHAMSS COFFEE" vient de la terrasse orientée plein est, où le soleil du matin arrive en premier sur toute la rue.</p>
+        <p>Depuis, l'équipe a grandi, mais l'idée n'a pas changé : travailler avec des grains verts qu'on torréfie sur place, cuire les pâtisseries maison chaque matin, et garder ce coin de table où les habitués retrouvent toujours les mêmes visages.</p>
+        <p>Aujourd'hui, CHAMSS COFFEE est devenu un point de rendez-vous pour étudiants, freelances et voisins — un café où l'on vient pour cinq minutes ou pour y rester des heures.</p>
+      </div>
+      <div class="story-visual">
+        <div class="badge">CHAMSS COFFEE<br>ÉTABLI EN 2016<br>FÈS, MAROC</div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="yr">2016</div><div class="lbl">Ouverture de la première salle</div></div>
+      <div class="tl-item"><div class="yr">2019</div><div class="lbl">Arrivée de notre propre torréfacteur</div></div>
+      <div class="tl-item"><div class="yr">2022</div><div class="lbl">Ouverture de la terrasse et du coin lecture</div></div>
+      <div class="tl-item"><div class="yr">2026</div><div class="lbl">Toujours le même café, servi avec le sourire</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Menu</div>
+      <h2>À boire et à manger</h2>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-tab="glaces">Cafés glacés</button>
+      <button class="menu-tab" data-tab="chauds">Cafés chauds</button>
+      <button class="menu-tab" data-tab="patisserie">Pâtisserie</button>
+    </div>
+
+    <div class="menu-panel active" id="glaces">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Iced Americano</div><div class="mi-desc">Espresso double, eau glacée</div></div><div class="mi-price">25 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Iced Latte</div><div class="mi-desc">Espresso, lait froid, glaçons</div></div><div class="mi-price">30 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cold Brew</div><div class="mi-desc">Infusion à froid 16h</div></div><div class="mi-price">32 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Iced Caramel Macchiato</div><div class="mi-desc">Lait, vanille, caramel maison</div></div><div class="mi-price">35 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Iced Mocha</div><div class="mi-desc">Espresso, chocolat, lait froid</div></div><div class="mi-price">35 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Frappé Chamss Coffee</div><div class="mi-desc">Notre signature, mousse épaisse</div></div><div class="mi-price">38 MAD</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="chauds">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Espresso</div><div class="mi-desc">Simple ou double</div></div><div class="mi-price">15 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cappuccino</div><div class="mi-desc">Mousse de lait onctueuse</div></div><div class="mi-price">22 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Café Latte</div><div class="mi-desc">Espresso, lait vapeur</div></div><div class="mi-price">24 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Café Noisette</div><div class="mi-desc">Espresso, nuage de lait</div></div><div class="mi-price">18 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Thé à la menthe</div><div class="mi-desc">Menthe fraîche, servi traditionnel</div></div><div class="mi-price">15 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Chocolat chaud</div><div class="mi-desc">Chocolat noir fondu, lait entier</div></div><div class="mi-price">26 MAD</div></div>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="patisserie">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Croissant beurre</div><div class="mi-desc">Fait maison chaque matin</div></div><div class="mi-price">12 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cookie double chocolat</div><div class="mi-desc">Cœur fondant</div></div><div class="mi-price">15 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Cheesecake</div><div class="mi-desc">Coulis de fruits rouges</div></div><div class="mi-price">28 MAD</div></div>
+        <div class="menu-item"><div class="mi-left"><div class="mi-name">Muffin myrtille</div><div class="mi-desc">Myrtilles fraîches</div></div><div class="mi-price">18 MAD</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Contact</div>
+      <h2>Venez nous voir</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="info-block">
+          <div class="lbl">Adresse</div>
+          <div class="val">12 Avenue Hassan II, Ville Nouvelle, Fès, Maroc</div>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Téléphone</div>
+          <div class="val">+212 6 00 00 00 00</div>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Horaires</div>
+          <div class="val">Lundi – Samedi : 8h00 – 22h00<br>Dimanche : 9h00 – 21h00</div>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Suivez-nous</div>
+          <div class="socials">
+            <a href="#" title="Instagram">IG</a>
+            <a href="#" title="Facebook">FB</a>
+            <a href="#" title="WhatsApp">WA</a>
+          </div>
+        </div>
+      </div>
+      <div class="map-visual">
+        <div>
+          <div class="pin">📍 CHAMSS COFFEE</div>
+          <div>Ville Nouvelle, Fès<br>— remplacez ceci par votre carte Google Maps —</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 CHAMSS COFFEE — Fès, Maroc. Tous droits réservés.
+</footer>
+
+<script>
+document.querySelectorAll('.menu-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
