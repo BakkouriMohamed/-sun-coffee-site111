@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — CHAMSS COFFEE</title>
+  <style>
+    :root{
+      --cream:#FBF3E2;
+      --cream-2:#F3E6C9;
+      --coffee:#3B2417;
+      --coffee-soft:#6B4A34;
+      --sun:#F2A93B;
+      --rust:#C1592B;
+      --line:rgba(59,36,23,.15);
+      --disp:'Fraunces', serif;
+      --body:'Libre Franklin', sans-serif;
+    }
+
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{
+      font-family:var(--body);
+      background:linear-gradient(180deg, var(--cream) 0%, #fffdf8 100%);
+      color:var(--coffee);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none;}
+
+    .nav{
+      position:sticky; top:0; z-index:10;
+      background:rgba(251,243,226,.92);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      max-width:1120px; margin:0 auto; padding:16px 6vw;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .logo{font-family:var(--disp); font-weight:900; font-size:22px; letter-spacing:-.01em;}
+    .nav-links{display:flex; gap:22px; font-weight:600; font-size:14px;}
+    .nav-links a:hover{color:var(--rust);} 
+
+    main{max-width:1120px; margin:0 auto; padding:56px 6vw 96px;}
+    .hero-contact{
+      text-align:center; padding:36px 24px 40px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:0 16px 40px rgba(59,36,23,.06);
+      margin-bottom:32px;
+    }
+    .eyebrow{
+      display:inline-block; margin-bottom:12px;
+      font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--rust);
+    }
+    .hero-contact h1{font-family:var(--disp); font-size:clamp(34px, 5vw, 54px); line-height:1.05; margin-bottom:14px;}
+    .hero-contact p{max-width:720px; margin:0 auto 24px; color:var(--coffee-soft); font-size:17px;}
+
+    .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+    .card{
+      background:white; border:1px solid var(--line); border-radius:20px; padding:24px;
+      box-shadow:0 12px 30px rgba(59,36,23,.05);
+    }
+    .card h2{font-family:var(--disp); font-size:24px; margin-bottom:16px; color:var(--coffee);}
+    .info-item{margin-bottom:16px;}
+    .info-label{font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--rust); margin-bottom:6px;}
+    .info-value{font-size:16px; line-height:1.6; color:var(--coffee-soft);}
+    .info-value a{color:var(--coffee); font-weight:600;}
+    .map-link{display:inline-block; margin-top:8px; color:var(--rust); font-weight:700;}
+
+    @media (max-width:780px){
+      .contact-grid{grid-template-columns:1fr;}
+      .nav-inner{flex-direction:column; gap:10px;}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">CHAMSS COFFEE</a>
+      <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-contact">
+      <div class="eyebrow">Contact</div>
+      <h1>Nous sommes là pour vous accueillir.</h1>
+      <p>Pour réserver, prendre un café à emporter ou simplement nous rendre visite, voici nos coordonnées et nos deux lieux de présence.</p>
+    </section>
+
+    <section class="contact-grid">
+      <article class="card">
+        <h2>Coordonnées</h2>
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="mailto:coffefez@sun.ma">coffefez@sun.ma</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Téléphone</div>
+          <div class="info-value"><a href="tel:+212655445666">0655445666</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Adresse</div>
+          <div class="info-value">Fès, Maroc</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Autre adresse</div>
+          <div class="info-value">Meknès, Maroc</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Localisation</h2>
+        <div class="info-item">
+          <div class="info-label">Fès</div>
+          <div class="info-value">Visitez notre café à Fès pour profiter d’un moment calme et chaleureux.</div>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=F%C3%A8s+Maroc" target="_blank" rel="noopener noreferrer">Voir sur Google Maps</a>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Meknès</div>
+          <div class="info-value">Notre autre point de présence à Meknès est prêt à vous recevoir.</div>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Mekn%C3%A8s+Maroc" target="_blank" rel="noopener noreferrer">Voir sur Google Maps</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
