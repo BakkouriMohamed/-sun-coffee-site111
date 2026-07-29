@@ -32,6 +32,23 @@ body{
   background:var(--cream); color:var(--coffee); font-family:var(--body);
   overflow-x:hidden;
 }
+body.dark-mode{
+  background:#1b1713; color:#f7ecd8;
+}
+body.dark-mode header.nav{
+  background:rgba(26,22,18,.95); border-color:rgba(247,236,216,.12);
+}
+body.dark-mode .nav-links a::after{ background:#f3e6c9; }
+body.dark-mode .dark-toggle{
+  border-color:#f3e6c9; color:#f3e6c9;
+}
+body.dark-mode .dark-toggle:hover{ background:#f3e6c9; color:var(--coffee); }
+body.dark-mode .hero{
+  background:radial-gradient(circle at 82% 18%, var(--sun) 0%, #211b16 46%);
+}
+body.dark-mode .hero p{ color:#dacfb5; }
+body.dark-mode .btn.outline{ border-color:#f3e6c9; color:#f3e6c9; }
+body.dark-mode .btn.outline:hover{ background:#f3e6c9; color:var(--coffee); }
 img,svg{display:block; max-width:100%;}
 a{color:inherit;}
 .wrap{ max-width:1180px; margin:0 auto; padding:0 6vw; }
@@ -53,6 +70,13 @@ header.nav{
   transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
 }
 .nav-links a:hover::after{ transform:scaleX(1); }
+.dark-toggle{
+  border:2px solid var(--coffee); border-radius:999px; background:transparent;
+  color:var(--coffee); padding:10px 18px; font-weight:700; font-size:14px;
+  cursor:pointer; transition:background .2s ease, color .2s ease, transform .2s ease;
+}
+.dark-toggle:hover{ background:var(--coffee); color:var(--cream); transform:translateY(-1px); }
+
 @media (max-width:700px){ .nav-links{ gap:16px; font-size:12.5px; } }
 
 /* ============ HERO ============ */
@@ -204,6 +228,7 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
       <a href="menu.html">Menu</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <button type="button" class="dark-toggle" aria-label="Basculer en mode sombre">🌙</button>
   </div>
 </header>
 
@@ -238,7 +263,29 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
     <path d="M30 60 h60 a30 30 0 0 1 -60 0" fill="#3B2417" opacity="0.85"/>
     <path d="M90 65 a25 25 0 0 1 0 30" fill="none" stroke="#3B2417" stroke-width="5" opacity="0.85"/>
   </svg>
-</section>
+  <script>
+    const darkToggle = document.querySelector('.dark-toggle');
+    const bodyEl = document.body;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      bodyEl.classList.add('dark-mode');
+    }
+
+    const updateToggleLabel = () => {
+      const isDark = bodyEl.classList.contains('dark-mode');
+      darkToggle.textContent = isDark ? '☀️' : '🌙';
+      darkToggle.setAttribute('aria-label', isDark ? 'Basculer en mode clair' : 'Basculer en mode sombre');
+    };
+
+    updateToggleLabel();
+
+    darkToggle.addEventListener('click', () => {
+      bodyEl.classList.toggle('dark-mode');
+      localStorage.setItem('theme', bodyEl.classList.contains('dark-mode') ? 'dark' : 'light');
+      updateToggleLabel();
+    });
+  </script>
 
 <!-- ============ HISTOIRE ============ -->
 <section class="section" id="histoire">
