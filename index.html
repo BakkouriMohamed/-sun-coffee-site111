@@ -67,7 +67,8 @@ header.nav{
 .hero h1 span{ position:relative; display:inline-block; }
 .hero p{ font-size:18px; line-height:1.65; color:var(--coffee-soft); max-width:52ch; margin:0 auto 30px; }
 .hero-actions{
-  display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  width:100%; max-width:520px; margin:0 auto; flex-wrap:wrap;
 }
 .btn{
   display:inline-block; background:var(--coffee); color:var(--cream); font-weight:700; font-size:20px;
@@ -79,6 +80,11 @@ header.nav{
 .btn:hover{ transform:translateY(-2px); background:var(--rust); }
 .btn.outline{ background:transparent; border:2px solid var(--coffee); color:var(--coffee); min-width:240px; }
 .btn.outline:hover{ background:var(--coffee); color:var(--cream); }
+
+@media (max-width:700px){
+  .hero-actions{ flex-direction:column; gap:12px; }
+  .btn, .btn.outline{ min-width:auto; width:100%; max-width:360px; }
+}
 
 .steam-cup{ position:absolute; right:6vw; bottom:5%; width:140px; opacity:.9; z-index:1; }@media (max-width:900px){ .steam-cup{ display:none; } }
 .steam path{ stroke:var(--coffee-soft); stroke-width:3; fill:none; stroke-linecap:round; opacity:.55; }
