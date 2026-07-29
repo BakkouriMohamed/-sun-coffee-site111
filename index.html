@@ -59,7 +59,10 @@ header.nav{
   border-bottom:1px solid var(--line);
 }
 .nav-inner{
-  max-width:1180px; margin:0 auto; padding:16px 6vw; display:flex; align-items:center; justify-content:space-between;
+  max-width:1180px; margin:0 auto; padding:16px 6vw; display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.nav-actions{
+  display:flex; align-items:center; gap:18px;
 }
 .logo{ font-family:var(--disp); font-weight:900; font-size:22px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
 .logo .dot{ width:10px; height:10px; border-radius:50%; background:var(--sun); }
@@ -223,12 +226,14 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
 <header class="nav">
   <div class="nav-inner">
     <div class="logo"><span class="dot"></span>CHAMSS COFFEE</div>
-    <nav class="nav-links">
-      <a href="#histoire">Notre histoire</a>
-      <a href="menu.html">Menu</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button type="button" class="dark-toggle" aria-label="Basculer en mode sombre">🌙</button>
+    <div class="nav-actions">
+      <nav class="nav-links">
+        <a href="#histoire">Notre histoire</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button type="button" class="dark-toggle" aria-label="Basculer en mode sombre">🌙</button>
+    </div>
   </div>
 </header>
 
