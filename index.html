@@ -42,7 +42,10 @@ header.nav{
   border-bottom:1px solid var(--line);
 }
 .nav-inner{
-  max-width:1180px; margin:0 auto; padding:16px 6vw; display:flex; align-items:center; justify-content:space-between;
+  max-width:1180px; margin:0 auto; padding:16px 6vw; display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.nav-actions{
+  display:flex; align-items:center; gap:18px;
 }
 .logo{ font-family:var(--disp); font-weight:900; font-size:22px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
 .logo .dot{ width:10px; height:10px; border-radius:50%; background:var(--sun); }
@@ -53,7 +56,26 @@ header.nav{
   transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
 }
 .nav-links a:hover::after{ transform:scaleX(1); }
+.dark-toggle{
+  border:2px solid var(--coffee); border-radius:999px; background:transparent;
+  color:var(--coffee); padding:10px 18px; font-weight:700; font-size:14px;
+  cursor:pointer; transition:background .2s ease, color .2s ease, transform .2s ease;
+}
+.dark-toggle:hover{ background:var(--coffee); color:var(--cream); transform:translateY(-1px); }
 
+body.dark-mode{
+  background:#191410; color:#f8efde;
+}
+body.dark-mode header.nav{
+  background:rgba(25,20,15,.96); border-color:rgba(248,238,214,.12);
+}
+body.dark-mode .nav-links a::after{ background:#f3e6c9; }
+body.dark-mode .dark-toggle{ border-color:#f3e6c9; color:#f3e6c9; }
+body.dark-mode .dark-toggle:hover{ background:#f3e6c9; color:var(--coffee); }
+body.dark-mode .hero{ background:radial-gradient(circle at 82% 18%, var(--sun) 0%, #1e1913 46%); }
+body.dark-mode .hero p{ color:#d8cdae; }
+body.dark-mode .btn.outline{ border-color:#f3e6c9; color:#f3e6c9; }
+body.dark-mode .btn.outline:hover{ background:#f3e6c9; color:var(--coffee); }
 @media (max-width:700px){ .nav-links{ gap:16px; font-size:12.5px; } }
 
 /* ============ HERO ============ */
@@ -200,11 +222,14 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
 <header class="nav">
   <div class="nav-inner">
     <div class="logo"><span class="dot"></span>CHAMSS COFFEE</div>
-    <nav class="nav-links">
-      <a href="#histoire">Notre histoire</a>
-      <a href="menu.html">Menu</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="nav-actions">
+      <nav class="nav-links">
+        <a href="#histoire">Notre histoire</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button type="button" class="dark-toggle" aria-label="Basculer en mode sombre">🌙</button>
+    </div>
   </div>
 </header>
 
@@ -368,6 +393,28 @@ document.querySelectorAll('.menu-tab').forEach(tab => {
     tab.classList.add('active');
     document.getElementById(tab.dataset.tab).classList.add('active');
   });
+});
+
+const darkToggle = document.querySelector('.dark-toggle');
+const bodyEl = document.body;
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'dark') {
+  bodyEl.classList.add('dark-mode');
+}
+
+const updateDarkToggle = () => {
+  const isDark = bodyEl.classList.contains('dark-mode');
+  darkToggle.textContent = isDark ? '☀️' : '🌙';
+  darkToggle.setAttribute('aria-label', isDark ? 'Basculer en mode clair' : 'Basculer en mode sombre');
+};
+
+updateDarkToggle();
+
+darkToggle.addEventListener('click', () => {
+  bodyEl.classList.toggle('dark-mode');
+  localStorage.setItem('theme', bodyEl.classList.contains('dark-mode') ? 'dark' : 'light');
+  updateDarkToggle();
 });
 </script>
 </body>
