@@ -33,6 +33,13 @@ body{
   overflow-x:hidden;
 }
 img,svg{display:block; max-width:100%;}
+a,button{font-family:var(--body);} 
+/* Masquer toute illustration de tasse dans la page d'accueil (réversible) */
+.hero img[alt*="tasse" i], .hero img[alt*="cup" i],
+.hero .cup, .cup-illustration, .hero .illustration-cup,
+.hero svg.cup, .hero .cup-svg {
+  display: none !important;
+}
 a{color:inherit;}
 .wrap{ max-width:1180px; margin:0 auto; padding:0 6vw; }
 
@@ -114,21 +121,6 @@ body.dark-mode .btn.outline:hover{ background:#d8a26a; color:#2b170d; }
 @media (max-width:700px){
   .hero-actions{ flex-direction:column; gap:12px; }
   .btn, .btn.outline{ min-width:auto; width:100%; max-width:360px; }
-}
-
-.steam-cup{ position:absolute; right:3vw; bottom:5%; width:230px; opacity:1; z-index:1; filter:drop-shadow(0 12px 18px rgba(59,36,23,.22)); transform:rotate(-4deg); }@media (max-width:900px){ .steam-cup{ display:none; } }
-.steam path{ stroke:var(--coffee-soft); stroke-width:3; fill:none; stroke-linecap:round; opacity:.55; }
-.steam .s1{ animation:rise 3.2s ease-in-out infinite; }
-.steam .s2{ animation:rise 3.2s .6s ease-in-out infinite; }
-.steam .s3{ animation:rise 3.2s 1.2s ease-in-out infinite; }
-.steam-cup .cup-body{ stroke:var(--coffee); stroke-width:4; }
-.steam-cup .cup-rim{ fill:none; stroke:var(--rust); stroke-width:4; stroke-linecap:round; opacity:.92; }
-.steam-cup .cup-handle{ fill:none; stroke:var(--coffee); stroke-width:5; stroke-linecap:round; }
-.steam-cup .cup-shadow{ fill:rgba(59,36,23,.16); }
-@keyframes rise{
-  0%{ transform:translateY(6px); opacity:0; }
-  30%{ opacity:.6; }
-  100%{ transform:translateY(-22px); opacity:0; }
 }
 
 /* ============ SECTION HEAD ============ */
@@ -259,7 +251,6 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
       <a href="#contact" class="btn outline">Nous trouver</a>
     </div>
   </div>
-  <img class="steam-cup" src="assets/coffee-cup.svg" alt="" aria-hidden="true" />
 </section>
 
 <!-- ============ HISTOIRE ============ -->
