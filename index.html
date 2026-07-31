@@ -116,11 +116,15 @@ body.dark-mode .btn.outline:hover{ background:#d8a26a; color:#2b170d; }
   .btn, .btn.outline{ min-width:auto; width:100%; max-width:360px; }
 }
 
-.steam-cup{ position:absolute; right:6vw; bottom:5%; width:180px; opacity:.95; z-index:1; }@media (max-width:900px){ .steam-cup{ display:none; } }
+.steam-cup{ position:absolute; right:6vw; bottom:5%; width:210px; opacity:1; z-index:1; filter:drop-shadow(0 12px 18px rgba(59,36,23,.18)); transform:rotate(-4deg); }@media (max-width:900px){ .steam-cup{ display:none; } }
 .steam path{ stroke:var(--coffee-soft); stroke-width:3; fill:none; stroke-linecap:round; opacity:.55; }
 .steam .s1{ animation:rise 3.2s ease-in-out infinite; }
 .steam .s2{ animation:rise 3.2s .6s ease-in-out infinite; }
 .steam .s3{ animation:rise 3.2s 1.2s ease-in-out infinite; }
+.steam-cup .cup-body{ fill:rgba(243,230,201,.98); stroke:var(--coffee); stroke-width:4; }
+.steam-cup .cup-rim{ fill:none; stroke:var(--rust); stroke-width:4; stroke-linecap:round; opacity:.92; }
+.steam-cup .cup-handle{ fill:none; stroke:var(--coffee); stroke-width:5; stroke-linecap:round; }
+.steam-cup .cup-shadow{ fill:rgba(59,36,23,.16); }
 @keyframes rise{
   0%{ transform:translateY(6px); opacity:0; }
   30%{ opacity:.6; }
@@ -261,11 +265,11 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
       <path class="s2" d="M80 58 Q74 44 80 30 Q86 18 80 8"/>
       <path class="s3" d="M100 56 Q94 42 100 28 Q106 16 100 6"/>
     </g>
-    <ellipse cx="80" cy="130" rx="50" ry="12" fill="rgba(59,36,23,0.16)"/>
-    <path d="M48 64 h44 a16 16 0 0 1 16 16 v15 a28 28 0 0 1 -28 28 h-20 a28 28 0 0 1 -28 -28 v-15 a16 16 0 0 1 16 -16z" fill="transparent" stroke="var(--coffee)" stroke-width="4"/>
-    <path d="M108 76 c12 0 18 8 18 16 s-6 16 -18 16" fill="none" stroke="var(--coffee)" stroke-width="5" stroke-linecap="round"/>
-    <path d="M50 70 h44" stroke="var(--coffee)" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
-    <path d="M48 105 h40" stroke="var(--coffee)" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+    <ellipse class="cup-shadow" cx="80" cy="130" rx="50" ry="12"/>
+    <path class="cup-body" d="M48 64 h44 a16 16 0 0 1 16 16 v15 a28 28 0 0 1 -28 28 h-20 a28 28 0 0 1 -28 -28 v-15 a16 16 0 0 1 16 -16z"/>
+    <path class="cup-handle" d="M108 76 c12 0 18 8 18 16 s-6 16 -18 16"/>
+    <path class="cup-rim" d="M50 70 h44"/>
+    <path class="cup-rim" d="M48 105 h40" opacity="0.55"/>
   </svg>
 </section>
 
