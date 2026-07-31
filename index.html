@@ -116,7 +116,7 @@ body.dark-mode .btn.outline:hover{ background:#d8a26a; color:#2b170d; }
   .btn, .btn.outline{ min-width:auto; width:100%; max-width:360px; }
 }
 
-.steam-cup{ position:absolute; right:6vw; bottom:5%; width:140px; opacity:.9; z-index:1; }@media (max-width:900px){ .steam-cup{ display:none; } }
+.steam-cup{ position:absolute; right:6vw; bottom:5%; width:180px; opacity:.95; z-index:1; }@media (max-width:900px){ .steam-cup{ display:none; } }
 .steam path{ stroke:var(--coffee-soft); stroke-width:3; fill:none; stroke-linecap:round; opacity:.55; }
 .steam .s1{ animation:rise 3.2s ease-in-out infinite; }
 .steam .s2{ animation:rise 3.2s .6s ease-in-out infinite; }
@@ -255,14 +255,17 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
       <a href="#contact" class="btn outline">Nous trouver</a>
     </div>
   </div>
-  <svg class="steam-cup" viewBox="0 0 120 120">
+  <svg class="steam-cup" viewBox="0 0 160 160" aria-hidden="true">
     <g class="steam">
-      <path class="s1" d="M45 55 Q40 45 45 35 Q50 25 45 15"/>
-      <path class="s2" d="M60 55 Q55 45 60 35 Q65 25 60 15"/>
-      <path class="s3" d="M75 55 Q70 45 75 35 Q80 25 75 15"/>
+      <path class="s1" d="M60 56 Q54 42 60 28 Q66 16 60 6"/>
+      <path class="s2" d="M80 58 Q74 44 80 30 Q86 18 80 8"/>
+      <path class="s3" d="M100 56 Q94 42 100 28 Q106 16 100 6"/>
     </g>
-    <path d="M30 60 h60 a30 30 0 0 1 -60 0" fill="#3B2417" opacity="0.85"/>
-    <path d="M90 65 a25 25 0 0 1 0 30" fill="none" stroke="#3B2417" stroke-width="5" opacity="0.85"/>
+    <ellipse cx="80" cy="130" rx="50" ry="12" fill="#3B2417" opacity="0.16"/>
+    <path d="M48 64 h44 a16 16 0 0 1 16 16 v15 a28 28 0 0 1 -28 28 h-20 a28 28 0 0 1 -28 -28 v-15 a16 16 0 0 1 16 -16z" fill="#FBF3E2" stroke="#3B2417" stroke-width="4"/>
+    <path d="M108 76 c12 0 18 8 18 16 s-6 16 -18 16" fill="none" stroke="#3B2417" stroke-width="5" stroke-linecap="round"/>
+    <path d="M50 70 h44" stroke="#3B2417" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+    <path d="M48 105 h40" stroke="#3B2417" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
   </svg>
 </section>
 
