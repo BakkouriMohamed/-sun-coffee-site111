@@ -94,16 +94,27 @@ header.nav{
 body.dark-mode{
   background:linear-gradient(180deg, #24170f 0%, #120b07 100%); color:#f8efde;
 }
+body.dark-mode,
+body.dark-mode a,
+body.dark-mode button,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode div{
+  color:#fff;
+}
 body.dark-mode header.nav{
   background:rgba(36,23,15,.96); border-color:rgba(248,238,214,.12);
 }
 body.dark-mode .nav-links a::after{ background:#d8a26a; }
-body.dark-mode .dark-toggle{ border-color:#d8a26a; color:#d8a26a; }
-body.dark-mode .dark-toggle:hover{ background:#d8a26a; color:#2b170d; }
+body.dark-mode .dark-toggle{ border-color:#fff; color:#fff; }
+body.dark-mode .dark-toggle:hover{ background:#fff; color:#2b170d; }
 body.dark-mode .hero{ background:radial-gradient(circle at 82% 18%, #b97843 0%, #1a120b 46%); }
-body.dark-mode .hero p{ color:#e0c7a3; }
-body.dark-mode .btn.outline{ border-color:#d8a26a; color:#d8a26a; }
-body.dark-mode .btn.outline:hover{ background:#d8a26a; color:#2b170d; }
+body.dark-mode .btn.outline{ border-color:#fff; color:#fff; }
+body.dark-mode .btn.outline:hover{ background:#fff; color:#2b170d; }
 @media (max-width:700px){ .nav-links{ gap:16px; font-size:12.5px; } }
 
 /* ============ HERO ============ */
