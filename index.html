@@ -128,6 +128,48 @@ body.dark-mode .btn.outline:hover{ background:#fff; color:#2b170d; }
 }
 @keyframes spin{ to{ transform:rotate(360deg); } }
 .hero-content{ position:relative; z-index:1; padding:0 6vw; max-width:720px; margin:0 auto; display:flex; flex-direction:column; align-items:center; text-align:center; }
+.hero-carousel{
+  position:relative; width:100%; max-width:980px; margin:0 auto 34px;
+  aspect-ratio:16/9; min-height:320px; border-radius:28px; overflow:hidden;
+  box-shadow:0 24px 60px rgba(59,36,23,.18); background:#2a1a11;
+}
+.hero-slides{ position:absolute; inset:0; }
+.hero-slide{
+  position:absolute; inset:0; opacity:0; transition:opacity .7s ease; pointer-events:none;
+}
+.hero-slide.active{ opacity:1; pointer-events:auto; }
+.hero-slide img{ width:100%; height:100%; object-fit:cover; }
+.hero-slide::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(59,36,23,.05) 0%, rgba(59,36,23,.18) 55%, rgba(59,36,23,.72) 100%);
+}
+.hero-slide-caption{
+  position:absolute; left:24px; right:24px; bottom:24px; z-index:2;
+  color:#fff; max-width:520px;
+}
+.hero-slide-caption .eyebrow{ color:#ffe2b0; margin-bottom:8px; }
+.hero-slide-caption h3{
+  font-family:var(--disp); font-size:clamp(26px, 4vw, 44px); line-height:1.02; margin-bottom:8px;
+}
+.hero-slide-caption p{ color:rgba(255,255,255,.92); font-size:15px; line-height:1.6; margin:0; max-width:38ch; }
+.carousel-btn{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:3;
+  width:46px; height:46px; border-radius:50%; border:1px solid rgba(255,255,255,.35);
+  background:rgba(59,36,23,.32); color:#fff; font-size:24px; line-height:1; cursor:pointer;
+  backdrop-filter:blur(6px); transition:background .2s ease, transform .2s ease;
+}
+.carousel-btn:hover{ background:rgba(59,36,23,.55); }
+.carousel-btn.prev{ left:16px; }
+.carousel-btn.next{ right:16px; }
+.carousel-dots{
+  position:absolute; left:50%; bottom:14px; transform:translateX(-50%); z-index:3;
+  display:flex; gap:10px;
+}
+.carousel-dot{
+  width:10px; height:10px; border-radius:999px; border:0; background:rgba(255,255,255,.45); cursor:pointer;
+  transition:transform .2s ease, background .2s ease, width .2s ease;
+}
+.carousel-dot.active{ background:#fff; width:28px; }
 .eyebrow{ font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px; color:var(--rust); margin-bottom:16px; }
 .hero h1{
   font-family:var(--disp); font-weight:900; font-optical-sizing:auto;
@@ -151,6 +193,11 @@ body.dark-mode .btn.outline:hover{ background:#fff; color:#2b170d; }
 .btn.outline:hover{ background:var(--coffee); color:var(--cream); }
 
 @media (max-width:700px){
+  .hero-carousel{ min-height:260px; margin-bottom:26px; }
+  .hero-slide-caption{ left:18px; right:18px; bottom:18px; }
+  .carousel-btn{ width:40px; height:40px; font-size:22px; }
+  .carousel-btn.prev{ left:10px; }
+  .carousel-btn.next{ right:10px; }
   .hero-actions{ flex-direction:column; gap:12px; }
   .btn, .btn.outline{ min-width:auto; width:100%; max-width:360px; }
 }
@@ -319,6 +366,37 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
     </g>
   </svg>
   <div class="hero-content">
+    <div class="hero-carousel" aria-roledescription="carousel" aria-label="Galerie CHAMSS COFFEE">
+      <div class="hero-slides">
+        <article class="hero-slide active">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1400&q=80" alt="Intérieur lumineux de CHAMSS COFFEE" />
+          <div class="hero-slide-caption">
+            <div class="eyebrow">Ambiance</div>
+            <h3>Un salon doux et lumineux</h3>
+            <p>Un espace calme pour travailler, discuter ou simplement profiter d’un café bien préparé.</p>
+          </div>
+        </article>
+        <article class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1486021656572-72fe462be1e0?auto=format&fit=crop&w=1400&q=80" alt="Tasses de café servies sur la table" />
+          <div class="hero-slide-caption">
+            <div class="eyebrow">Signature</div>
+            <h3>Le café au centre du moment</h3>
+            <p>Espresso, boissons glacées et recettes maison préparées avec soin chaque jour.</p>
+          </div>
+        </article>
+        <article class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=80" alt="Coin café chaleureux et ensoleillé" />
+          <div class="hero-slide-caption">
+            <div class="eyebrow">Terrasse</div>
+            <h3>La lumière du matin sur la terrasse</h3>
+            <p>Le lieu idéal pour commencer la journée avec un café et une pâtisserie fraîche.</p>
+          </div>
+        </article>
+      </div>
+      <button class="carousel-btn prev" type="button" aria-label="Slide précédent">‹</button>
+      <button class="carousel-btn next" type="button" aria-label="Slide suivant">›</button>
+      <div class="carousel-dots" aria-label="Navigation des slides"></div>
+    </div>
     <h1>Soleil. Café. Sourire.</h1>
     <p>CHAMSS COFFEE, c'est un café de quartier à Fès où le grain est torréfié avec soin et où les habitués ont leur table. Cafés glacés, pâtisseries maison, une terrasse qui attrape le soleil toute la journée.</p>
     <div class="hero-actions">
@@ -460,6 +538,14 @@ document.querySelectorAll('.menu-tab').forEach(tab => {
 const darkToggle = document.querySelector('.dark-toggle');
 const bodyEl = document.body;
 const savedTheme = localStorage.getItem('theme');
+const heroCarousel = document.querySelector('.hero-carousel');
+const heroSlides = heroCarousel ? Array.from(heroCarousel.querySelectorAll('.hero-slide')) : [];
+const heroDots = heroCarousel ? heroCarousel.querySelector('.carousel-dots') : null;
+const prevSlideButton = heroCarousel ? heroCarousel.querySelector('.carousel-btn.prev') : null;
+const nextSlideButton = heroCarousel ? heroCarousel.querySelector('.carousel-btn.next') : null;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let activeSlideIndex = 0;
+let slideTimer = null;
 
 if (savedTheme === 'dark') {
   bodyEl.classList.add('dark-mode');
@@ -472,6 +558,72 @@ const updateDarkToggle = () => {
 };
 
 updateDarkToggle();
+
+if (heroCarousel && heroSlides.length && heroDots && prevSlideButton && nextSlideButton) {
+  const dots = heroSlides.map((slide, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'carousel-dot';
+    dot.setAttribute('aria-label', `Aller au slide ${index + 1}`);
+    dot.addEventListener('click', () => {
+      setActiveSlide(index);
+      restartAutoplay();
+    });
+    heroDots.appendChild(dot);
+    return dot;
+  });
+
+  function setActiveSlide(index) {
+    activeSlideIndex = (index + heroSlides.length) % heroSlides.length;
+    heroSlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('active', slideIndex === activeSlideIndex);
+    });
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === activeSlideIndex);
+      dot.setAttribute('aria-pressed', dotIndex === activeSlideIndex ? 'true' : 'false');
+    });
+  }
+
+  function nextSlide() {
+    setActiveSlide(activeSlideIndex + 1);
+  }
+
+  function previousSlide() {
+    setActiveSlide(activeSlideIndex - 1);
+  }
+
+  function restartAutoplay() {
+    if (slideTimer) {
+      clearInterval(slideTimer);
+      slideTimer = null;
+    }
+    if (!prefersReducedMotion) {
+      slideTimer = window.setInterval(nextSlide, 5000);
+    }
+  }
+
+  prevSlideButton.addEventListener('click', () => {
+    previousSlide();
+    restartAutoplay();
+  });
+
+  nextSlideButton.addEventListener('click', () => {
+    nextSlide();
+    restartAutoplay();
+  });
+
+  heroCarousel.addEventListener('mouseenter', () => {
+    if (slideTimer) {
+      clearInterval(slideTimer);
+      slideTimer = null;
+    }
+  });
+
+  heroCarousel.addEventListener('mouseleave', restartAutoplay);
+
+  setActiveSlide(0);
+  restartAutoplay();
+}
 
 darkToggle.addEventListener('click', () => {
   bodyEl.classList.toggle('dark-mode');
