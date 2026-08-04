@@ -1,36 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">CHAMSS COFFEE logo</title>
-  <desc id="desc">Sunburst logo with a coffee cup in the center.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CHAMSS COFFEE logo">
   <defs>
-    <linearGradient id="g" x1="88" y1="92" x2="424" y2="420" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#9b6a26"/>
-      <stop offset="0.55" stop-color="#c28a37"/>
-      <stop offset="1" stop-color="#e0b85c"/>
+    <linearGradient id="g" x1="64" y1="64" x2="448" y2="448" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9a6a27"/>
+      <stop offset="0.5" stop-color="#c18a37"/>
+      <stop offset="1" stop-color="#e1b85b"/>
     </linearGradient>
   </defs>
   <g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round">
-    <g stroke-width="10">
-      <line x1="256" y1="36" x2="256" y2="92"/>
-      <line x1="344" y1="62" x2="320" y2="109"/>
-      <line x1="404" y1="120" x2="358" y2="148"/>
-      <line x1="456" y1="256" x2="400" y2="256"/>
-      <line x1="404" y1="392" x2="358" y2="364"/>
-      <line x1="344" y1="450" x2="320" y2="403"/>
-      <line x1="256" y1="476" x2="256" y2="420"/>
-      <line x1="168" y1="450" x2="192" y2="403"/>
-      <line x1="108" y1="392" x2="154" y2="364"/>
-      <line x1="56" y1="256" x2="112" y2="256"/>
-      <line x1="108" y1="120" x2="154" y2="148"/>
-      <line x1="168" y1="62" x2="192" y2="109"/>
+    <g stroke-width="11">
+      <line x1="256" y1="18" x2="256" y2="88"/>
+      <line x1="355" y1="38" x2="321" y2="98"/>
+      <line x1="426" y1="110" x2="366" y2="144"/>
+      <line x1="474" y1="256" x2="404" y2="256"/>
+      <line x1="426" y1="402" x2="366" y2="368"/>
+      <line x1="355" y1="474" x2="321" y2="414"/>
+      <line x1="256" y1="494" x2="256" y2="424"/>
+      <line x1="157" y1="474" x2="191" y2="414"/>
+      <line x1="86" y1="402" x2="146" y2="368"/>
+      <line x1="38" y1="256" x2="108" y2="256"/>
+      <line x1="86" y1="110" x2="146" y2="144"/>
+      <line x1="157" y1="38" x2="191" y2="98"/>
     </g>
 
-    <path stroke-width="11" d="M184 164a120 120 0 0 1 144 0"/>
-    <path stroke-width="11" d="M328 164a120 120 0 1 1-144 0"/>
+    <path stroke-width="12" d="M189 169a117 117 0 0 1 134 0"/>
+    <path stroke-width="12" d="M330 169a120 120 0 1 1-146 0"/>
 
-    <path stroke-width="11" d="M211 232c0 55 24 105 45 105s45-44 45-98v-7h-90z"/>
-    <path stroke-width="11" d="M211 232h128"/>
-    <path stroke-width="11" d="M256 232c-17 0-32-3-45-8"/>
-    <path stroke-width="11" d="M300 232c17 0 32 13 32 30 0 19-14 33-32 33"/>
-    <path stroke-width="11" d="M259 151c6 10 6 21-2 30-7 8-8 17-2 27"/>
+    <path stroke-width="11" d="M211 232h114"/>
+    <path stroke-width="12" d="M212 232c0 57 26 109 44 109s44-45 44-99v-10h-88z"/>
+    <path stroke-width="12" d="M302 234c24 0 38 13 38 30 0 20-16 36-38 36"/>
+    <path stroke-width="12" d="M260 152c5 10 5 20-3 29-8 9-8 18-2 28"/>
   </g>
 </svg>
