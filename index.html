@@ -70,8 +70,7 @@ header.nav{
 .nav-actions{
   display:flex; align-items:center; gap:18px; margin-left:auto;
 }
-.logo{ font-family:var(--disp); font-weight:900; font-size:22px; letter-spacing:-.01em; display:flex; align-items:center; gap:10px; text-decoration:none; white-space:nowrap; }
-.logo-mark{ width:40px; height:40px; flex:0 0 40px; display:block; }
+.logo{ font-family:var(--disp); font-weight:900; font-size:22px; letter-spacing:-.01em; display:flex; align-items:center; text-decoration:none; white-space:nowrap; }
 .nav-links{ display:flex; gap:28px; font-size:14px; font-weight:600; }
 .nav-links a{ text-decoration:none; position:relative; padding-bottom:3px; }
 .nav-links a::after{
@@ -85,6 +84,10 @@ header.nav{
   cursor:pointer; transition:background .2s ease, color .2s ease, transform .2s ease;
 }
 .dark-toggle:hover{ background:var(--coffee); color:var(--cream); transform:translateY(-1px); }
+
+@media (min-width:901px){
+  .nav-inner{ max-width:none; width:100%; padding-left:0; padding-right:24px; }
+}
 
 body.dark-mode{
   background:linear-gradient(180deg, #24170f 0%, #120b07 100%); color:#f8efde;
@@ -277,7 +280,7 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img class="logo-mark" src="assets/chamss-logo.svg" alt="Logo CHAMSS COFFEE"><span>CHAMSS COFFEE</span></a>
+    <a href="index.html" class="logo"><span>CHAMSS COFFEE</span></a>
     <div class="nav-actions">
       <nav class="nav-links">
         <a href="#histoire">Notre histoire</a>
