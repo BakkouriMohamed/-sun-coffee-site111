@@ -150,6 +150,147 @@ body.dark-mode .btn.outline:hover{ background:#fff; color:#2b170d; }
 .btn.outline{ background:transparent; border:2px solid var(--coffee); color:var(--coffee); min-width:240px; }
 .btn.outline:hover{ background:var(--coffee); color:var(--cream); }
 
+/* ============ FEATURED BREAK ============ */
+.break-feature{
+  position:relative;
+  margin:0;
+  min-height:620px;
+  overflow:hidden;
+  background:linear-gradient(90deg, #3b220d 0 58%, #8a5314 58% 100%);
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(0,0,0,.1);
+}
+.break-feature__inner{
+  position:relative;
+  max-width:1180px;
+  margin:0 auto;
+  min-height:620px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  padding:40px 6vw;
+}
+.break-feature__copy{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  max-width:560px;
+  padding-left:12px;
+}
+.break-feature__title{
+  font-family:var(--disp);
+  font-size:clamp(44px, 6vw, 74px);
+  line-height:1;
+  font-weight:900;
+  margin-bottom:20px;
+  letter-spacing:-.02em;
+}
+.break-feature__text{
+  font-size:clamp(16px, 1.8vw, 20px);
+  line-height:1.8;
+  color:rgba(255,255,255,.88);
+  max-width:540px;
+}
+.break-feature__art{
+  position:relative;
+  min-height:520px;
+}
+.break-feature__art::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(66vw, 500px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at center, #f7d37a 0 15%, #f0b54c 16% 22%, #eadfb9 22% 25%, transparent 25%),
+    radial-gradient(circle at center, #8a541c 0 37%, transparent 37.5%),
+    radial-gradient(circle at 50% 50%, #6b3c10 0 42%, transparent 42.5%),
+    radial-gradient(circle at 50% 50%, #fbf7f0 0 26%, transparent 26.5%),
+    radial-gradient(circle at 50% 50%, #d1c6b7 0 24%, transparent 24.5%),
+    radial-gradient(circle at 50% 50%, #8b571f 0 18%, transparent 18.5%);
+  box-shadow:0 18px 30px rgba(0,0,0,.16);
+}
+.break-feature__art::after{
+  content:'';
+  position:absolute;
+  left:58%;
+  top:62%;
+  width:86px;
+  height:74px;
+  background:linear-gradient(180deg, #faf7f2 0 60%, #e2ddd6 60% 100%);
+  border-radius:0 0 28px 28px;
+  box-shadow:0 10px 20px rgba(0,0,0,.18);
+}
+.break-feature__steam{
+  position:absolute;
+  left:50%;
+  top:24%;
+  width:22px;
+  height:96px;
+  transform:translateX(-50%);
+  border-left:6px solid rgba(255,255,255,.35);
+  border-radius:50%;
+  filter:blur(.2px);
+}
+.break-feature__steam::before,
+.break-feature__steam::after{
+  content:'';
+  position:absolute;
+  width:14px;
+  height:72px;
+  border-left:5px solid rgba(255,255,255,.24);
+  border-radius:50%;
+}
+.break-feature__steam::before{ left:-16px; top:14px; transform:rotate(-10deg); }
+.break-feature__steam::after{ left:16px; top:8px; transform:rotate(12deg); }
+.break-feature__beans span{
+  position:absolute;
+  width:18px;
+  height:22px;
+  border-radius:50% 50% 44% 44%;
+  background:linear-gradient(180deg, #f6c562 0%, #d08d23 100%);
+  box-shadow:0 2px 4px rgba(0,0,0,.28);
+}
+.break-feature__beans span::before{
+  content:'';
+  position:absolute;
+  left:7px;
+  top:2px;
+  bottom:2px;
+  border-left:2px solid rgba(104,56,12,.65);
+  border-radius:50%;
+  transform:rotate(18deg);
+}
+.break-feature__beans .b1{ top:42px; right:120px; transform:rotate(22deg); }
+.break-feature__beans .b2{ top:92px; right:24px; transform:rotate(-8deg); }
+.break-feature__beans .b3{ top:174px; right:132px; transform:rotate(14deg); }
+.break-feature__beans .b4{ top:278px; right:42px; transform:rotate(12deg); }
+.break-feature__beans .b5{ bottom:96px; right:104px; transform:rotate(-10deg); }
+.break-feature__beans .b6{ bottom:34px; right:28px; transform:rotate(16deg); }
+.break-feature__beans .b7{ top:34px; left:32px; transform:rotate(-18deg); }
+.break-feature__beans .b8{ top:300px; left:96px; transform:rotate(18deg); }
+
+@media (max-width:860px){
+  .break-feature{ min-height:auto; }
+  .break-feature__inner{
+    min-height:auto;
+    grid-template-columns:1fr;
+    gap:30px;
+    padding:34px 6vw 46px;
+  }
+  .break-feature__art{ min-height:420px; }
+  .break-feature__art::before{ width:min(86vw, 440px); }
+  .break-feature__art::after{ left:64%; top:62%; }
+}
+@media (max-width:700px){
+  .break-feature__art{ min-height:320px; }
+  .break-feature__art::after{ width:68px; height:62px; }
+  .break-feature__copy{ padding-left:0; }
+}
+
 @media (max-width:700px){
   .hero-actions{ flex-direction:column; gap:12px; }
   .btn, .btn.outline{ min-width:auto; width:100%; max-width:360px; }
@@ -324,6 +465,28 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
     <div class="hero-actions">
       <a href="menu.html" class="btn">Voir le menu</a>
       <a href="#contact" class="btn outline">Nous trouver</a>
+    </div>
+  </div>
+</section>
+
+<section class="break-feature" aria-label="Visuel Coffee Break">
+  <div class="break-feature__inner">
+    <div class="break-feature__copy">
+      <div class="break-feature__title">BREAK SLIDE</div>
+      <div class="break-feature__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>
+    </div>
+    <div class="break-feature__art" aria-hidden="true">
+      <div class="break-feature__steam"></div>
+      <div class="break-feature__beans">
+        <span class="b1"></span>
+        <span class="b2"></span>
+        <span class="b3"></span>
+        <span class="b4"></span>
+        <span class="b5"></span>
+        <span class="b6"></span>
+        <span class="b7"></span>
+        <span class="b8"></span>
+      </div>
     </div>
   </div>
 </section>
