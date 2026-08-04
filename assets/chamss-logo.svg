@@ -1,33 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CHAMSS COFFEE logo">
-  <defs>
-    <linearGradient id="g" x1="56" y1="56" x2="456" y2="456" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#9f6b26"/>
-      <stop offset="0.5" stop-color="#c48a37"/>
-      <stop offset="1" stop-color="#e0b85a"/>
-    </linearGradient>
-  </defs>
-  <g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round">
-    <g stroke-width="11">
-      <line x1="256" y1="14" x2="256" y2="86"/>
-      <line x1="348" y1="34" x2="320" y2="96"/>
-      <line x1="414" y1="100" x2="354" y2="132"/>
-      <line x1="484" y1="256" x2="410" y2="256"/>
-      <line x1="414" y1="412" x2="354" y2="380"/>
-      <line x1="348" y1="478" x2="320" y2="416"/>
-      <line x1="256" y1="498" x2="256" y2="426"/>
-      <line x1="164" y1="478" x2="192" y2="416"/>
-      <line x1="98" y1="412" x2="158" y2="380"/>
-      <line x1="28" y1="256" x2="102" y2="256"/>
-      <line x1="98" y1="100" x2="158" y2="132"/>
-      <line x1="164" y1="34" x2="192" y2="96"/>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="CHAMSS COFFEE logo">
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M241 46c10 18 10 35 0 53" stroke-width="10"/>
+    <path d="M276 42c10 18 10 35 0 53" stroke-width="10"/>
 
-    <path stroke-width="12" d="M188 164a120 120 0 0 1 136 0"/>
-    <path stroke-width="12" d="M328 164a120 120 0 1 1-144 0"/>
+    <path d="M104 162c-6 0-11 5-11 11v39c0 6 5 11 11 11" stroke-width="12"/>
+    <path d="M376 162c6 0 11 5 11 11v39c0 6-5 11-11 11" stroke-width="12"/>
 
-    <path stroke-width="12" d="M214 232c0 56 24 106 42 106s42-43 42-94v-12h-84z"/>
-    <path stroke-width="11" d="M214 232h122"/>
-    <path stroke-width="12" d="M298 236c24 0 39 13 39 30 0 19-16 35-39 35"/>
-    <path stroke-width="12" d="M260 149c6 11 6 22-2 31-8 8-8 18-2 28"/>
+    <path d="M108 186c0 77 61 140 136 140s136-63 136-140" stroke-width="12"/>
+    <path d="M150 164h180" stroke-width="12"/>
+
+    <path d="M188 250c0 37 25 67 52 67s52-30 52-67v-22H188z" stroke-width="12"/>
+    <path d="M292 252c26 0 47 20 47 45s-21 45-47 45" stroke-width="12"/>
+    <path d="M211 250h60" stroke-width="12"/>
+
+    <path d="M165 360h150" stroke-width="12"/>
   </g>
 </svg>
