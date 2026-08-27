@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sun-coffee-site111.vercel.app/sitemap.xml
+Sitemap: https://www.chamsscoffee.me/sitemap.xml
