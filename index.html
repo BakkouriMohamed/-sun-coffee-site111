@@ -151,6 +151,20 @@ body.dark-mode .btn.outline:hover{ background:#fff; color:#2b170d; }
   display:flex; justify-content:space-between; align-items:center; gap:16px;
   width:100%; max-width:720px; margin:0 auto; flex-wrap:nowrap;
 }
+.hero-image{
+  display:flex;
+  justify-content:center;
+  padding:48px 6vw;
+  background:var(--cream);
+  border-bottom:1px solid var(--line);
+}
+.hero-image img{
+  display:block;
+  width:min(100%, 520px);
+  height:auto;
+  border-radius:18px;
+  box-shadow:0 16px 32px rgba(59,36,23,.18);
+}
 .btn{
   display:inline-block; background:var(--coffee); color:var(--cream); font-weight:700; font-size:20px;
   text-decoration:none; padding:20px 44px; border-radius:999px; letter-spacing:.05em;
@@ -479,6 +493,10 @@ footer{ padding:30px 6vw; text-align:center; font-size:13px; color:var(--coffee-
       <a href="#contact" class="btn outline">Nous trouver</a>
     </div>
   </div>
+</section>
+
+<section class="hero-image" aria-label="Logo Chamss Coffee">
+  <img src="chamsscoffee-image.jpg" alt="Logo CHAMSS COFFEE">
 </section>
 
 <section class="break-feature" aria-label="Visuel Coffee Break">
